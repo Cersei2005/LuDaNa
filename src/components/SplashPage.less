@@ -1,0 +1,105 @@
+@import '../styles/variables.less';
+
+.splash-container {
+  position: relative;
+  height: 100vh;
+  /* 使用大葱绿渐变背景 */
+  background: @primary-color-gradient;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: @default-font;
+}
+
+.mountain-background {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, #8B4513, #A0522D);
+  clip-path: polygon(0% 100%, 100% 100%, 100% 40%, 50% 0%, 0% 40%);
+}
+
+.agent-character {
+  position: absolute;
+  bottom: 20%;
+  z-index: 2;
+  
+  .character-head {
+    width: 60px;
+    height: 60px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    position: relative;
+    
+    .character-eyes {
+      position: absolute;
+      top: 20px;
+      width: 10px;
+      height: 10px;
+      background-color: #000;
+      border-radius: 50%;
+      
+      &:first-child {
+        left: 15px;
+      }
+      
+      &:last-child {
+        right: 15px;
+      }
+    }
+    
+    .character-mouth {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 10px;
+      border-bottom: 2px solid #000;
+      border-radius: 0 0 10px 10px;
+    }
+  }
+  
+  .character-body {
+    width: 80px;
+    height: 100px;
+    background-color: #1976D2;
+    margin: 0 auto;
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+.callout-bubble {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 12px 24px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: white transparent;
+  }
+}
+
+.calligraphy-character {
+  position: absolute;
+  font-size: 120px;
+  font-weight: bold;
+  /* 使用毛笔书法字体 */
+  font-family: @calligraphy-font;
+  color: #FFF;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}

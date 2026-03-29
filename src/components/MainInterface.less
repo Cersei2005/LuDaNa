@@ -1,0 +1,90 @@
+@import '../styles/variables.less';
+
+.main-interface-card {
+  border-radius: 16px; /* 2xl圆角 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 增强阴影效果 */
+  background-color: #fff;
+  font-family: @default-font;
+  
+  .ant-card-body {
+    padding: 24px;
+  }
+}
+
+.spice-control {
+  .spice-slider-container {
+    padding: 0 12px;
+    margin-bottom: 24px;
+    
+    .spice-slider {
+      .ant-slider-track {
+        /* 创建从黄色到橙色到红色的渐变 */
+        background: linear-gradient(to right, #FFD700, #FF8C00, #FF4500);
+        height: 12px;
+        border-radius: 6px;
+      }
+      
+      .ant-slider-handle {
+        /* 移除border、box-shadow、width、height和margin-top */
+      }
+      
+      /* 调整handle::after的宽高为14px */
+      .ant-slider-handle::after {
+        width: 14px;
+        height: 14px;
+      }
+      
+      .ant-slider-step {
+        height: 12px;
+      }
+      
+      .ant-slider-dot {
+        width: 8px;
+        height: 8px;
+        bottom: 3px;
+        border: 2px solid #fff;
+        background-color: transparent;
+      }
+    }
+  }
+  
+  .spice-indicator {
+    display: flex;
+    justify-content: space-between;
+    
+    .spice-level {
+      text-align: center;
+      padding: 8px;
+      border-radius: 8px; /* 圆角 */
+      flex: 1;
+      margin: 0 4px;
+      transition: all 0.3s;
+      cursor: pointer;
+      
+      &.active {
+        background-color: #E8F5E9;
+        box-shadow: 0 0 0 2px @primary-color-dark;
+      }
+      
+      .spice-icon {
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
+      
+      .spice-label {
+        font-weight: 500;
+        margin-bottom: 2px;
+        /* 增大字号和行间距 */
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      
+      .spice-description {
+        font-size: 12px;
+        color: #666;
+        /* 增大行间距 */
+        line-height: 1.5;
+      }
+    }
+  }
+}

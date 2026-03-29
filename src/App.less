@@ -1,0 +1,66 @@
+@import './styles/variables.less';
+@import './styles/fonts.less';
+
+.app-layout {
+  min-height: 100vh;
+  background-color: @background-color; /* 黄河土 */
+  /* 叠加粗布纹理 */
+  background-image: @fabric-texture;
+  background-repeat: repeat;
+  font-family: @default-font;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  /* 使用大葱绿渐变背景 */
+  background: @primary-color-gradient;
+  color: white;
+  
+  .agent-status {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+}
+
+.app-content {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  /* 添加泰山剪影背景 */
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    height: 100px;
+    background-image: url('https://www.weavefox.cn/api/bolt/unsplash_image?keyword=泰山剪影&width=150&height=100&random=taishan_silhouette');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: -1;
+  }
+}
+
+.welcome-card {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 16px; /* 2xl圆角 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 增强阴影效果 */
+  
+  .ant-card-body {
+    padding: 24px;
+  }
+}
+
+/* 标题使用毛笔书法字体 */
+.calligraphy-title {
+  font-family: @calligraphy-font;
+  font-size: 24px;
+  font-weight: normal;
+}

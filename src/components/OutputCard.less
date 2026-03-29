@@ -1,0 +1,83 @@
+@import '../styles/variables.less';
+
+.output-card {
+  margin-top: 24px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 24px;
+  font-family: @default-font;
+  
+  .response-bubble {
+    position: relative;
+    /* 使用煎饼色 */
+    background-color: @pancake-color;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50px;
+      border-width: 10px 10px 0;
+      border-style: solid;
+      border-color: @pancake-color transparent;
+      /* 增加字体大小和行间距 */
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    
+    .bubble-content {
+      h5 {
+        margin-top: 0;
+      }
+      
+      p {
+        margin-bottom: 0;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+  
+  .subtext-section {
+    background-color: #E3F2FD;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+    
+    h5 {
+      margin-top: 0;
+      color: #1976D2;
+      display: flex;
+      align-items: center;
+      /* 增大字体 */
+      font-size: 16px;
+    }
+    
+    p {
+      margin-bottom: 0;
+      font-size: 14px;
+      /* 增大行间距 */
+      line-height: 1.6;
+    }
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+    /* 使用红头文件红作为强调色 */
+    .ant-btn-primary {
+      background-color: @accent-color;
+      border-color: @accent-color;
+      
+      &:hover, &:focus {
+        background-color: darken(@accent-color, 5%);
+        border-color: darken(@accent-color, 5%);
+      }
+    }
+  }
+}
